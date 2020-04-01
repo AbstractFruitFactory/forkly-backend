@@ -8,6 +8,8 @@ const ROUTE = '/recipes'
 app.post(`${ROUTE}`, generateId, (req, res) => {
     addRecipe(req.body).then(() => {
         res.send('Success!')
+    }, err => {
+        throw err
     })
 })
 
